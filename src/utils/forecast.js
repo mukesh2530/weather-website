@@ -13,13 +13,17 @@ const forecast = (latitude, longitude, callback) => {
     } else {
       callback(
         undefined,
-        body.current.weather_descriptions[0] +","+
-        
+        body.current.weather_descriptions[0] +
+          "," +
           " It is currently " +
           body.current.temperature +
-          " degress out. There is a " +
+          " degree out,and feelslike " +
+          body.current.feelslike +
+          " degree." +
+          " There is a " +
           body.current.precip +
-          " % chance of rain."
+          " % chance of rain,and humidity is " +
+          body.current.humidity
       );
     }
   });
